@@ -46,10 +46,10 @@ EMTO-CPA calculated properties for **1,203 BCC W-based alloys** (2–4 component
 | `B` | Predicted bulk modulus | GPa |
 | `E` | Predicted Young's modulus | GPa |
 | `G` | Predicted shear modulus | GPa |
-| `C11` | Predicted \(C_{11}\) | GPa |
-| `C12` | Predicted \(C_{12}\) | GPa |
-| `C44` | Predicted \(C_{44}\) | GPa |
-| `Cpr` | Predicted \(C' = (C_{11} - C_{12})/2\) | GPa |
+| `C11` | Predicted $\(C_{11}\)$ | GPa |
+| `C12` | Predicted $\(C_{12}\)$ | GPa |
+| `C44` | Predicted $\(C_{44}\)$ | GPa |
+| `Cpr` | Predicted $\(C' = (C_{11} - C_{12})/2\)$ | GPa |
 | `Lp` | Predicted lattice parameter $a$| Å |
 
 ### `data/predicted/screening_predictions.csv.zip`
