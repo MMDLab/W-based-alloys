@@ -141,7 +141,7 @@ The multi-task neural network was validated using:
 - extrapolation in the number of components
 - hold-out validation
 
-In the interpolation regime, \(R^2 > 0.99\) for all target properties.  
+In the interpolation regime, $R^2 > 0.99$ for all target properties.  
 The one-element-out test identified rhenium as the most difficult element for extrapolation. Adding 1–5% of Re-containing data to the training set restored accuracy, confirming that the error was caused by out-of-distribution descriptors rather than an architectural limitation.
 
 ---
