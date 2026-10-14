@@ -107,8 +107,8 @@ Top 20 promising compositions selected by the screening criteria:
 - Concentrations: atomic percent (at.%).
 - Elastic moduli and elastic constants: GPa.
 - Lattice parameter: Å.
-- \(C' = (C_{11} - C_{12})/2\).
-- \(P_c = C_{12} - C_{44}\).
+- $C' = (C_{11} - C_{12})/2$.
+- $P_c = C_{12} - C_{44}$.
 <!-- - Missing values are encoded as empty fields or `NaN`.-->
 
 ---
