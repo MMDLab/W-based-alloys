@@ -15,8 +15,8 @@ Training code, model weights, and feature-generation scripts will be added in fu
 
 ## Contents
 
-```
 **Planned structure:*
+```
 .
 ├── README.md
 ├── LICENSE
