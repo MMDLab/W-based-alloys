@@ -42,18 +42,15 @@ EMTO-CPA calculated properties for **1,203 BCC W-based alloys** (2–4 component
 
 | Column | Description | Units |
 |---|---|---|
-| `composition` | Compact composition string, e.g. `W0.65Ta0.35` | — |
-| `W`, `Cr`, `Hf`, `Mo`, `Nb`, `Re`, `Ta`, `Ti`, `V`, `Zr` | Atomic fractions | at.% |
-| `n_components` | Number of components | — |
-| `system` | Chemical system, e.g. `W-Ta-Ti` | — |
-| `B_GPa` | Bulk modulus | GPa |
-| `C11_GPa` | Elastic constant \(C_{11}\) | GPa |
-| `C12_GPa` | Elastic constant \(C_{12}\) | GPa |
-| `C44_GPa` | Elastic constant \(C_{44}\) | GPa |
-| `Cprime_GPa` | \(C' = (C_{11} - C_{12})/2\) | GPa |
-| `G_GPa` | Shear modulus | GPa |
-| `E_GPa` | Young's modulus | GPa |
-| `a_Angstrom` | Lattice parameter | Å |
+| `formula` | Compact composition string, e.g. `W0.65Ta0.35` | — |
+| `B` | Predicted bulk modulus | GPa |
+| `E` | Predicted Young's modulus | GPa |
+| `G` | Predicted shear modulus | GPa |
+| `C11` | Predicted \(C_{11}\) | GPa |
+| `C12` | Predicted \(C_{12}\) | GPa |
+| `C44` | Predicted \(C_{44}\) | GPa |
+| `Cpr` | Predicted \(C' = (C_{11} - C_{12})/2\) | GPa |
+| `Lp` | Predicted lattice parameter $a$| Å |
 
 ### `data/predicted/screening_predictions.csv.zip`
 
@@ -62,26 +59,28 @@ Neural-network predictions for **> 831,000 virtual BCC W-based compositions** (2
 - Concentration step: 5 at.%
 - W content: ≥ 20–45 at.% depending on the number of components
 - Elements: Cr, Hf, Mo, Nb, Re, Ta, Ti, V, Zr
-- File is gzip-compressed due to size.
+- File is zip-compressed due to size.
 
 **Columns:**
 
 | Column | Description | Units |
 |---|---|---|
-| `composition` | Compact composition string | — |
-| `W`, `Cr`, `Hf`, `Mo`, `Nb`, `Re`, `Ta`, `Ti`, `V`, `Zr` | Atomic fractions | at.% |
-| `n_components` | Number of components | — |
-| `B_GPa` | Predicted bulk modulus | GPa |
-| `C11_GPa` | Predicted \(C_{11}\) | GPa |
-| `C12_GPa` | Predicted \(C_{12}\) | GPa |
-| `C44_GPa` | Predicted \(C_{44}\) | GPa |
-| `Cprime_GPa` | Predicted \(C' = (C_{11} - C_{12})/2\) | GPa |
-| `G_GPa` | Predicted shear modulus | GPa |
-| `E_GPa` | Predicted Young's modulus | GPa |
+| `formula` | Compact composition string | — |
+| `B_PRED` | Predicted bulk modulus | GPa |
+| `E_PRED` | Predicted Young's modulus | GPa |
+| `G_PRED` | Predicted shear modulus | GPa |
+| `C11_PRED` | Predicted \(C_{11}\) | GPa |
+| `C12_PRED` | Predicted \(C_{12}\) | GPa |
+| `C44_PRED` | Predicted \(C_{44}\) | GPa |
+| `Cpr_PRED` | Predicted \(C' = (C_{11} - C_{12})/2\) | GPa |
+| `Lp_PRED` | Predicted lattice parameter $a$ | Å |
+
+
 <!-- | `a_Angstrom` | Predicted lattice parameter | Å |
 | `G_over_B` | Pugh ratio \(G/B\) | — |
 | `Pc_GPa` | Cauchy pressure \(P_c = C_{12} - C_{44}\) | GPa |-->
 
+<!-- 
 ### `data/predicted/top20_candidates.csv`
 
 Top 20 promising compositions selected by the screening criteria:
@@ -94,11 +93,12 @@ Top 20 promising compositions selected by the screening criteria:
 
 | Column | Description | Units |
 |---|---|---|
-| `composition` | Compact composition string | — |
+| `formula` | Compact composition string | — |
 | `G_over_B` | Pugh ratio \(G/B\) | — |
 | `Pc_GPa` | Cauchy pressure \(P_c\) | GPa |
 | `E_GPa` | Predicted Young's modulus | GPa |
 | `B_GPa` | Predicted bulk modulus | GPa |
+-->
 
 ---
 
@@ -109,7 +109,7 @@ Top 20 promising compositions selected by the screening criteria:
 - Lattice parameter: Å.
 - \(C' = (C_{11} - C_{12})/2\).
 - \(P_c = C_{12} - C_{44}\).
-- Missing values are encoded as empty fields or `NaN`.
+<!-- - Missing values are encoded as empty fields or `NaN`.-->
 
 ---
 
@@ -122,14 +122,10 @@ import pandas as pd
 calc = pd.read_csv("data/calculated/emto_cpa_dataset.csv")
 
 # Predicted screening data
-pred = pd.read_csv("data/predicted/screening_predictions.csv.gz")
-
-# Top candidates
-top20 = pd.read_csv("data/predicted/top20_candidates.csv")
+pred = pd.read_csv("data/predicted/screening_predictions.csv.zip")
 
 print(calc.head())
 print(pred.head())
-print(top20.head())
 ```
 
 ---
@@ -160,10 +156,11 @@ If you use these data, please cite:
   author  = {Sidnov, K. and Smirnova, E. and Konov, D. and others},
   journal = {Manuscript in preparation},
   year    = {2026},
-  note    = {Data repository: W-ANN}
+  note    = {Data repository: [GitHub](https://github.com/MMDLab/W-based-alloys)}
 }
 ```
 
+<!-- 
 A `CITATION.cff` file will be added/updated upon publication.
 
 ---
@@ -174,7 +171,8 @@ The data in this repository are released under the **Creative Commons Attributio
 See `LICENSE` for details.
 
 ---
-
+ -->
+ 
 ## Acknowledgment
 
 This work was supported by the Russian Science Foundation, Project No. 25-22-00803.
@@ -184,4 +182,4 @@ This work was supported by the Russian Science Foundation, Project No. 25-22-008
 ## Contact
 
 For questions about the data or the paper, please contact the corresponding author.  
-*(Add corresponding author email here.)*
+*(k.sidnov@misis.ru)*
