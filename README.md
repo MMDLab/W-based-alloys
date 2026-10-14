@@ -29,7 +29,7 @@ Training code, model weights, and feature-generation scripts will be added in fu
         └── top20_candidates.csv
 ```
 
-### `data/calculated/emto_cpa_dataset.csv`
+### 📁 `data/calculated/emto_cpa_dataset.csv`
 
 EMTO-CPA calculated properties for **1,203 BCC W-based alloys** (2–4 components).
 
@@ -43,16 +43,16 @@ EMTO-CPA calculated properties for **1,203 BCC W-based alloys** (2–4 component
 | Column | Description | Units |
 |---|---|---|
 | `formula` | Compact composition string, e.g. `W0.65Ta0.35` | — |
-| `B` | Predicted bulk modulus | GPa |
-| `E` | Predicted Young's modulus | GPa |
-| `G` | Predicted shear modulus | GPa |
-| `C11` | Predicted $\(C_{11}\)$ | GPa |
-| `C12` | Predicted $\(C_{12}\)$ | GPa |
-| `C44` | Predicted $\(C_{44}\)$ | GPa |
-| `Cpr` | Predicted $\(C' = (C_{11} - C_{12})/2\)$ | GPa |
-| `Lp` | Predicted lattice parameter $a$| Å |
+| `B` | Calculated bulk modulus | GPa |
+| `E` | Calculated Young's modulus | GPa |
+| `G` | Calculated shear modulus | GPa |
+| `C11` | Calculated $C_{11}$ | GPa |
+| `C12` | Calculated $C_{12}$ | GPa |
+| `C44` | Calculated $C_{44}$ | GPa |
+| `Cpr` | Calculated $C' = (C_{11} - C_{12})/2$ | GPa |
+| `Lp` | Calculated lattice parameter $a$| Å |
 
-### `data/predicted/screening_predictions.csv.zip`
+### 📁 `data/predicted/screening_predictions.csv.zip`
 
 Neural-network predictions for **> 831,000 virtual BCC W-based compositions** (2–6 components).
 
@@ -69,10 +69,10 @@ Neural-network predictions for **> 831,000 virtual BCC W-based compositions** (2
 | `B_PRED` | Predicted bulk modulus | GPa |
 | `E_PRED` | Predicted Young's modulus | GPa |
 | `G_PRED` | Predicted shear modulus | GPa |
-| `C11_PRED` | Predicted \(C_{11}\) | GPa |
-| `C12_PRED` | Predicted \(C_{12}\) | GPa |
-| `C44_PRED` | Predicted \(C_{44}\) | GPa |
-| `Cpr_PRED` | Predicted \(C' = (C_{11} - C_{12})/2\) | GPa |
+| `C11_PRED` | Predicted $C_{11}$ | GPa |
+| `C12_PRED` | Predicted $C_{12}$ | GPa |
+| `C44_PRED` | Predicted $C_{44}$ | GPa |
+| `Cpr_PRED` | Predicted $C' = (C_{11} - C_{12})/2$ | GPa |
 | `Lp_PRED` | Predicted lattice parameter $a$ | Å |
 
 
